@@ -51,7 +51,7 @@ Additional case studies include community farms, home gardens, and permaculture 
 - JavaScript files in the `js/` directory
 
 ## How to Use / Navigate the Project
-- Open `index.html` in a web browser to access the home page.
+- Open https://ndzalo2010.github.io/Food-Security-Through-Garden-Projects/ in a web browser to access the home page.
 - Use the navigation menu to explore research findings, calculations, recommendations, and gallery sections.
 - The project is designed to provide comprehensive information on food security through garden projects, supported by data, case studies, and practical strategies.
 
