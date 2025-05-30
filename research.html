@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Findings | Food Security Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Research Findings</h1>
+            <p>Case Studies of Successful Food Gardens in South Africa</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="research.html" class="active"><i class="fas fa-search"></i> Research</a></li>
+                <li><a href="calculations.html"><i class="fas fa-calculator"></i> Calculations</a></li>
+                <li><a href="recommendations.html"><i class="fas fa-lightbulb"></i> Recommendations</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="case-studies">
+            <h2>Case Studies</h2>
+            
+            <article class="case-study">
+                <h3>1. School Food Garden in Gauteng</h3>
+                <div class="case-content">
+                    <img src="images/school garden.jpeg" alt="School Food Garden 1">
+                    <img src="images/school geardening.jpeg" alt="School Food Garden 2">
+                    <div class="case-text">
+                        <h4>Key Findings:</h4>
+                        <ul>
+                            <li>Feeds 200 students daily with fresh vegetables</li>
+                            <li>Integrated into school curriculum</li>
+                            <li>Uses compost from school food waste</li>
+                        </ul>
+                        <h4>Statistics:</h4>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-value">20</span>
+                                <span class="stat-label">m² area</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">80</span>
+                                <span class="stat-label">kg yield/month</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.0</span>
+                                <span class="stat-label">kg/m² yield</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="case-study">
+                <h3>2. Urban Rooftop Garden in Western Cape</h3>
+                <div class="case-content">
+                    <img src="images/wc3.png" alt="Western Cape Garden 1">
+                    <img src="images/wc2.png" alt="Western Cape Garden 2">
+                    <img src="images/wc1.png" alt="Western Cape Garden 3">
+                    <div class="case-text">
+                        <h4>Key Findings:</h4>
+                        <ul>
+                            <li>Utilizes unused rooftop space in city center</li>
+                            <li>Hydroponic system saves water</li>
+                            <li>Supplies local restaurants with fresh herbs</li>
+                        </ul>
+                        <h4>Statistics:</h4>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">m² area</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">kg yield/month</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">3.0</span>
+                                <span class="stat-label">kg/m² yield</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Additional case studies would follow the same pattern -->
+        </section>
+
+        <section id="data-visualization">
+            <h2>Data Visualization</h2>
+            <div class="charts">
+                <div class="chart-container">
+                    <canvas id="yieldChart"></canvas>
+                    <p class="chart-caption">Yield Comparison (kg/m²)</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="costChart"></canvas>
+                    <p class="chart-caption">Cost-Benefit Analysis</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Ndzalo Mathebula, 2025 Food Security Project</p>
+            <p>ICT</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/FairFoodSA/"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/faosfsafrica/status/1523680803125096449"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/foodandtreesforafrica/?hl=en"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Yield Comparison Chart
+        const yieldCtx = document.getElementById('yieldChart').getContext('2d');
+        const yieldChart = new Chart(yieldCtx, {
+            type: 'bar',
+            data: {
+                labels: ['School Garden', 'Urban Rooftop', 'Community Farm', 'Home Garden', 'Permaculture'],
+                datasets: [{
+                    label: 'Yield per m² (kg)',
+                    data: [4.0, 3.0, 4.5, 3.5, 4.0],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Cost-Benefit Chart
+        const costCtx = document.getElementById('costChart').getContext('2d');
+        const costChart = new Chart(costCtx, {
+            type: 'line',
+            data: {
+                labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+                datasets: [
+                    {
+                        label: 'Setup Costs',
+                        data: [2000, 2000, 2000, 2000, 2000, 2000],
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true
+                    },
+                    {
+                        label: 'Yield Value',
+                        data: [0, 400, 800, 1200, 1600, 2000],
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

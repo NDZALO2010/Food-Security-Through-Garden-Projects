@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Models | Food Security Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mathematical Models</h1>
+            <p>Calculations for Optimal Garden Planning</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="research.html"><i class="fas fa-search"></i> Research</a></li>
+                <li><a href="calculations.html" class="active"><i class="fas fa-calculator"></i> Calculations</a></li>
+                <li><a href="recommendations.html"><i class="fas fa-lightbulb"></i> Recommendations</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="calculators">
+            <h2>Garden Planning Calculators</h2>
+            
+            <div class="calculator">
+                <h3>Plant Density Calculator</h3>
+                <p>Determine how many plants can fit in your garden space.</p>
+                <form id="density-form">
+                    <div class="form-group">
+                        <label for="garden-area">Garden Area (m²):</label>
+                        <input type="number" id="garden-area" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plant-space">Space per Plant (m²):</label>
+                        <input type="number" id="plant-space" step="0.01" required>
+                    </div>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="density-result" class="result">
+                    <p>You can plant <span id="plant-count">0</span> crops in this space.</p>
+                </div>
+            </div>
+
+            <div class="calculator">
+                <h3>Water Requirement Calculator</h3>
+                <p>Estimate daily water needs for your garden.</p>
+                <form id="water-form">
+                    <div class="form-group">
+                        <label for="water-area">Garden Area (m²):</label>
+                        <input type="number" id="water-area" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="water-rate">Water per m² (L/day):</label>
+                        <input type="number" id="water-rate" value="5" step="0.1" required>
+                    </div>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="water-result" class="result">
+                    <p>Your garden needs <span id="water-amount">0</span> liters of water per day.</p>
+                </div>
+            </div>
+
+            <div class="calculator">
+                <h3>Yield Estimation Calculator</h3>
+                <p>Predict your potential harvest yield.</p>
+                <form id="yield-form">
+                    <div class="form-group">
+                        <label for="plant-number">Number of Plants:</label>
+                        <input type="number" id="plant-number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="yield-per-plant">Average Yield per Plant (kg):</label>
+                        <input type="number" id="yield-per-plant" step="0.1" required>
+                    </div>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="yield-result" class="result">
+                    <p>Expected yield: <span id="total-yield">0</span> kg.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="formulas">
+            <h2>Key Mathematical Formulas</h2>
+            <div class="formula-card">
+                <h3>Plant Density Formula</h3>
+                <div class="formula">
+                    <p>Number of Plants = Total Garden Area (m²) ÷ Space per Plant (m²)</p>
+                </div>
+                <p>This calculation helps maximize space utilization without overcrowding plants.</p>
+            </div>
+            
+            <div class="formula-card">
+                <h3>Water Requirement Formula</h3>
+                <div class="formula">
+                    <p>Water Needed (L) = Garden Area (m²) × Water per m² (L/day)</p>
+                </div>
+                <p>Essential for planning irrigation systems and water conservation.</p>
+            </div>
+            
+            <div class="formula-card">
+                <h3>Yield Estimation Formula</h3>
+                <div class="formula">
+                    <p>Yield (kg) = Number of Plants × Average Yield per Plant (kg)</p>
+                </div>
+                <p>Helps predict food production for household or community needs.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Ndzalo Mathebula, 2025 Food Security Project</p>
+            <p>ICT</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/FairFoodSA/"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/faosfsafrica/status/1523680803125096449"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/foodandtreesforafrica/?hl=en"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Plant Density Calculator
+        document.getElementById('density-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const area = parseFloat(document.getElementById('garden-area').value);
+            const space = parseFloat(document.getElementById('plant-space').value);
+            const plants = Math.floor(area / space);
+            document.getElementById('plant-count').textContent = plants;
+        });
+
+        // Water Requirement Calculator
+        document.getElementById('water-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const area = parseFloat(document.getElementById('water-area').value);
+            const rate = parseFloat(document.getElementById('water-rate').value);
+            const water = (area * rate).toFixed(1);
+            document.getElementById('water-amount').textContent = water;
+        });
+
+        // Yield Estimation Calculator
+        document.getElementById('yield-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const plants = parseInt(document.getElementById('plant-number').value);
+            const yieldPer = parseFloat(document.getElementById('yield-per-plant').value);
+            const total = (plants * yieldPer).toFixed(1);
+            document.getElementById('total-yield').textContent = total;
+        });
+    </script>
+</body>
+</html>
